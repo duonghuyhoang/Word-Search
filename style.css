@@ -56,13 +56,15 @@
 
 .body-main {
     margin-top: 20px;
-    width: 1280px;
-    height: 2200px;
+    width: 100%;
+    min-height: 490px;
+    max-height: 100%;
     background-color:  rgba(0, 0, 0, 0.09);  
-   
+    padding-bottom: 20px;
 }
 .search-bar {
     display: inline-flex;
+    margin-left: 80px;
 }
 #search-input {
     width: 300px;
