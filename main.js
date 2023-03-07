@@ -1,4 +1,3 @@
-
 $(document).ready(() => {
     const url = 'https://api.datamuse.com/words?';
     const metadata = '&md=d'
@@ -9,20 +8,43 @@ $(document).ready(() => {
         let list = Math.min(15, res.length)
         if (!res.length) {
             $('.error-search').html('<strong>Không tìm thấy kết quả </strong>')
-        }
-        for (let i = 0; i < list; i++) {
+        }  
+      
+       
+      
+       
+        for (let i = 0; i < list; i++) { 
+            const item = res[i];
+            let means = [];
+            if( Array.isArray(item.defs) ) {
+                means = item.defs.map(def => 
+                
+                ` <li>${def}</li>`)
+               
+            }
+            
+            
             listWord.push( `
                 <li>
                 <p><strong>${res[i].word}</strong></p>
-                <br> <span>${res[i].defs}</span>
+                <br> <ul>${means.join('')}</ul>
                 </li>
                 ` 
-            )
-        }
-        for (let i = 0; i < list; i++) {
-            $('.render-search').append(listWord[i])
+            ) 
+             
             
         }
+           $('.render-search').append(listWord)
+             
+        
+ 
+    } 
+    
+    const loading = () => {
+        $('.loader').show()
+        setTimeout(() => {
+            $('.loader').hide()
+        },1000)
     }
     const callApi = async () => {
         const valueSearch = $('#search-input').val()
@@ -30,6 +52,7 @@ $(document).ready(() => {
         const res = await fetch(response,{cache:'no-cache'})    
         const getRes = await res.json();
         renderResponse(getRes)
+       
             
     }
     const displayResult = (e) => {
@@ -37,7 +60,11 @@ $(document).ready(() => {
         $('.list-search').css({'display': "block"})
         $('.render-search').empty();
         $('.error-search').empty();
-        callApi()
+        loading()
+        setTimeout(() => {
+            callApi()
+        },700)
+        
     }
     $('#search-button').on('click', displayResult);
 

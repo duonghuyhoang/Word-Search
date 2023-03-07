@@ -1,6 +1,29 @@
 /* pc */
-@media (min-width: 1024) {
-
+@media (min-width: 1440px) and (max-width:1921px){
+       .content {
+        width: 100%;
+       }
+    .search-bar {
+        margin-left: 120px;
+        }
+}
+/* pc 4k */
+@media (min-width: 1920px){
+    .content {
+     width: 100%;
+    }
+ .search-bar {
+     margin-left: 670px;
+     }
+}
+/* laptop  */
+@media (min-width: 1024px) and (max-width: 1420px) {
+    .content {
+     width: 100%;
+    }
+ .search-bar {
+     margin-left: 20px;
+     }
 }
 /* tablet */
 @media (min-width: 740px) and (max-width: 1023px) {
@@ -8,7 +31,7 @@
         width: 100%;
    }
    .search-bar {
-    margin-left: -200px;
+    margin-left: -170px;
     }
     #search-input {
         width: 200px;
@@ -32,7 +55,7 @@
         width: 100%;
    }
    .search-bar {
-    margin-left: -383px;
+    margin-left: -353px;
     }
     #search-input {
         width: 180px;
