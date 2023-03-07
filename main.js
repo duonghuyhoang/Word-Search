@@ -46,6 +46,13 @@ $(document).ready(() => {
             $('.loader').hide()
         },1000)
     }
+    const deleteWord = () => {
+        $('.ti-close').click(function (e) { 
+            e.preventDefault();
+           
+           $('.content').hide();
+            });
+    }
     const callApi = async () => {
         const valueSearch = $('#search-input').val()
         const response = `${url}${nav}=${valueSearch}${metadata}`;
@@ -61,6 +68,8 @@ $(document).ready(() => {
         $('.render-search').empty();
         $('.error-search').empty();
         loading()
+        $('.content').show();
+        deleteWord()
         setTimeout(() => {
             callApi()
         },700)
@@ -71,7 +80,22 @@ $(document).ready(() => {
     $('.nav-item').on('click',function(e) {
         $('.nav-item').removeClass('active')
         $(this).addClass('active')
+        
         nav = $(document).find('li.active').attr('id')
         displayResult(e)
     });
+    $('#search-input').keyup(function (e) { 
+         if ( $('#search-input').val() !== '') {
+            $('.ti-close').css({'display': "block"})
+        }else {
+            $('.ti-close').css({'display': "none"})
+        }
+    })  
+    $('.ti-close').click(function (e) { 
+        e.preventDefault();
+        $('#search-input').val('')
+        $('.ti-close').css({'display': "none"})
+        });
+    
+   
 })

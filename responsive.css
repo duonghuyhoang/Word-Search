@@ -1,14 +1,14 @@
 /* pc */
-@media (min-width: 1440px) and (max-width:1921px){
+@media (min-width: 1441px) and (max-width:1920px){
        .content {
         width: 100%;
        }
     .search-bar {
-        margin-left: 120px;
+        margin-left: 350px;
         }
 }
 /* pc 4k */
-@media (min-width: 1920px){
+@media (min-width: 1921px){
     .content {
      width: 100%;
     }
@@ -17,12 +17,12 @@
      }
 }
 /* laptop  */
-@media (min-width: 1024px) and (max-width: 1420px) {
+@media (min-width: 1024px) and (max-width: 1440px) {
     .content {
      width: 100%;
     }
  .search-bar {
-     margin-left: 20px;
+     margin-left: 120px;
      }
 }
 /* tablet */

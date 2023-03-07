@@ -92,7 +92,14 @@ html body {
     font-weight: bolder;
     
 }
-
+.ti-close {
+    position: absolute;
+    margin-top: -20px;
+    margin-left: 730px;
+    font-size: x-small;
+    display: none;
+    cursor: pointer;
+}
 .ti-search {
     font-size: 12px;
     color: #fff;
